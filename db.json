@@ -1,0 +1,20 @@
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" },
+  "match": {"team1": "نانت", "team2": "تولوز", "matchTime": "22:30", "matchDate": "30 اردیبهشت", "stadium": "تولوز", "league": "لیگ 1 فرانسه", "referee": "داور j.brisard" },
+  "recentlymatches": [
+    {"team1": {"teamName": "آژاکس", "score": 2}, "team2":{"teamName": "تولوز", "score": 0} },
+    {"team1": {"teamName": "دورتموند", "score": 3}, "team2":{"teamName": "لیون", "score": 2} },
+    {"team1": {"teamName": "آژاکس", "score": 2}, "team2":{"teamName": "رئال", "score": 1} },
+    {"team1": {"teamName": "تولوز", "score": 2}, "team2":{"teamName": "بارسلونا", "score": 3} },
+    {"team1": {"teamName": "منچستریونایتد", "score": 0}, "team2":{"teamName": "منچستر سیتی", "score": 0} },
+    {"team1": {"teamName": "لیورپول", "score": 1}, "team2":{"teamName": "پاریس", "score": 1} }
+  ]
+  
+  
+}
