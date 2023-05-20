@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Breadcrumbs } from "@mui/material";
 import { Typography } from "@mui/material/styles/createTypography";

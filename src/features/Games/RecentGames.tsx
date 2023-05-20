@@ -13,11 +13,11 @@ type GameData = {
 };
 
 const Index = () => {
+  // TODO: bad naming
   const [games, setGames] = useState<GameData[]>([]);
 
   useEffect(() => {
-    const result = getRecentGames();
-    result
+    getRecentGames()
       .then((res) => {
         if (res.status === 200) {
           const data = res.data;
@@ -50,6 +50,7 @@ const Index = () => {
       <div>
         {games.map((game, index) => {
           return (
+            // TODO: duplicate code
             <div className="flex flex-row gap-x-2 m-2" key={index}>
               <div>{game.team2.teamName}</div>
               <div className="bg-gray-100 flex flex-row p-2 rounded">

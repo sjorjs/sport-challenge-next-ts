@@ -4,10 +4,10 @@ import RecentGames from "../../Games/RecentGames";
 
 const FixturePage = () => {
   return (
-    <div>
+    <React.Fragment>
       <GameInfo />
       <RecentGames />
-    </div>
+    </React.Fragment>
   );
 };
 

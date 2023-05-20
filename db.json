@@ -6,7 +6,7 @@
     { "id": 1, "body": "some comment", "postId": 1 }
   ],
   "profile": { "name": "typicode" },
-  "match": {"team1": "نانت", "team2": "تولوز", "matchTime": "22:30", "matchDate": "30 اردیبهشت", "stadium": "تولوز", "league": "لیگ 1 فرانسه", "referee": "داور j.brisard" },
+  "match": {"team1": "نانت", "team2": "تولوز", "matchTime": "22:30", "matchDate": "30 اردیبهشت", "stadium": "تولوز", "league": "لیگ 1 فرانسه", "referee": "داور j.brisard", "team1ImageUrl": "https://sportsline.ir/wp-content/uploads/2019/01/logo-of-FC-Nantes.jpg", "team2ImageUrl": "https://upload.wikimedia.org/wikipedia/fa/thumb/5/5d/Toulouse_FC_logo.svg/1200px-Toulouse_FC_logo.svg.png" },
   "recentlymatches": [
     {"team1": {"teamName": "آژاکس", "score": 2}, "team2":{"teamName": "تولوز", "score": 0} },
     {"team1": {"teamName": "دورتموند", "score": 3}, "team2":{"teamName": "لیون", "score": 2} },
