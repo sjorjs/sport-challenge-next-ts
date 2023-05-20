@@ -1,45 +1,50 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import Navbar from "../../../../core/components/Navbar";
-import API from "../../../../core/api/axiosConfig";
-import Image from "next/image";
-import { getFixturesApi } from "../../api";
-import { DateConverter } from "../../utils/DateConverter";
+import { getFixtureAPI } from "../../api";
+import { dateConverter } from "../../utils/DateConverter";
 
-const Index = () => {
-  const [league, setLeague] = useState<any>();
-  const [fixtures, setFixtures] = useState();
+interface Fixture {
+  start_time: string;
+  away: {
+    logo: string;
+    name: string;
+  };
+  home: {
+    logo: string;
+    name: string;
+  };
+}
+
+const Header = () => {
+  const [fixture, setFixture] = useState<Fixture | undefined>();
   const [dateTimeString, setDateTimeString] = useState<string>("");
-  const fixturesApi = getFixturesApi({ date: "2023-05-19" });
+
+  const callApi = getFixtureAPI({ id: "02be22ec-09a8-4b78-a1bf-f82885065591" });
   useEffect(() => {
-    fixturesApi
-      .then((res) => {
-        if (res.status === 200) {
-          setLeague(res.data);
-          setDateTimeString(res.data?.all[0].fixtures[0].start_time);
-        }
-      })
-      .catch((err) => console.log(err));
+    callApi.then((res) => {
+      if (res.status === 200) {
+        setFixture(res.data);
+        setDateTimeString(res.data.start_time);
+      }
+    });
   }, []);
 
-  console.log(league);
-  // const dateTimeString = "2023-05-19T22:30:00";
-  const [date, time] = dateTimeString.split("T");
+  const [date, time] = dateConverter({ dateTimeString });
 
   return (
     <div className="bg-white">
       <div className="flex flex-row gap-x-2 mx-8 p-4">
-        <div className="w-8 h-8">
-          <img src={league?.all[0].fixtures[0].away.logo} alt="team1" />
-          <div>{league?.all[0].fixtures[0].away.name}</div>
+        <div className="flex flex-col justify-center">
+          <img className="w-8 h-8" src={fixture?.home.logo} alt="team1" />
+          <h6 className="text-[15px]">{fixture?.home.name}</h6>
         </div>
         <div className="flex flex-col grow text-center ">
           <h4 className="font-bold">{time}</h4>
           <h5 className="font-blod">{date}</h5>
         </div>
-        <div className="w-8 h-8">
-          <img src={league?.all[0].fixtures[0].home.logo} alt="team1" />
-          <div>{league?.all[0].fixtures[0].home.name}</div>
+        <div className="flex flex-col justify-center">
+          <img className="w-8 h-8" src={fixture?.away.logo} alt="team1" />
+          <h6 className="text-[15px]">{fixture?.away.name}</h6>
         </div>
       </div>
       <Navbar />
@@ -47,4 +52,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Header;

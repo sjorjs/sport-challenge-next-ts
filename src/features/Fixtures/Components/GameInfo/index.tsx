@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Message from "./Message";
 import GameTable from "./GameTable";
-// import { getFixtureApi } from "../../api/index"; // TODO: use base path
+import LatesFixtures from "./LatesFixtures";
 
 const GameInfo = () => {
-  // TODO: bad naming
-
   return (
     <div className="m-4">
       <Message />
       <GameTable />
+      <LatesFixtures />
     </div>
   );
 };
