@@ -6,8 +6,6 @@ const api = new API();
 type GetFixturesRequest = {
   name?: string | undefined,
   date?: string | undefined,
-  isActive?: boolean | undefined,
-  isToday?: boolean | undefined 
 };
 
 export const getFixturesApi = async (args: GetFixturesRequest) => {

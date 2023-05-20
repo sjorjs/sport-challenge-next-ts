@@ -6,7 +6,6 @@ export const baseUrl = process.env.SPORT_CORE_URL;
 interface IApiMethodProps {
   url: string;
   name: string;
-  data?: object;
 }
 
 export default class API {
@@ -23,7 +22,7 @@ export default class API {
   }
 
   public GetMethod<T>(props: IApiMethodProps): AxiosPromise<T> {
-    const { url, name, data } = props;
+    const { url, name } = props;
 
     return this.axiosWrapper<T>({
       method: "GET",
