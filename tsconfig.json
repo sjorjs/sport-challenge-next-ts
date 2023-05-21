@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/core/api/axiosConfig.js"  ],
+, "src/core/api/axiosConfig.ts", "pages/index.js"  ],
   "exclude": [
     "node_modules"
   ]

@@ -18,14 +18,30 @@ const Navbar = () => {
   return (
     <div className="m-2" style={{ direction: "rtl" }}>
       <Breadcrumbs separator="" aria-label="breadcrumb">
-        <Link underline="hover" mt="24px" color="inherit" href="/">
+        <Link
+          underline="hover"
+          mt="24px"
+          color="inherit"
+          href="/"
+          className="font-mono font-bold text-[14px]"
+        >
           {BreadCumbValue.gameInfo}
         </Link>
-        <Link underline="hover" color="inherit" href="/news">
+        <Link
+          underline="hover"
+          color="inherit"
+          href="/news"
+          className="font-mono font-bold text-[14px]"
+        >
           {BreadCumbValue.news}
         </Link>
 
-        <Link underline="hover" color="inherit" href="/table">
+        <Link
+          underline="hover"
+          color="inherit"
+          href="/table"
+          className="font-mono font-bold text-[14px]"
+        >
           {BreadCumbValue.gameTable}
         </Link>
       </Breadcrumbs>

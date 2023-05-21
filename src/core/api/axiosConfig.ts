@@ -1,7 +1,12 @@
 import axios, {AxiosInstance, AxiosPromise, AxiosResponse} from "axios";
 
 
-const baseUrl = 'http://localhost:4000';
+// const baseUrl = 'http://localhost:4000';
+export const baseUrl = process.env.SPORT_CORE_URL;
+interface IApiMethodProps {
+  url: string;
+  name: string;
+}
 
 export default class API {
 
@@ -16,9 +21,12 @@ export default class API {
     });
   }
 
-  public async GetMethod<T>(props: string): Promise<AxiosResponse<T>> {
-    const url = baseUrl + props;
-    const response = await this.axiosWrapper<T>(url);
-    return response;
+  public GetMethod<T>(props: IApiMethodProps): AxiosPromise<T> {
+    const { url, name } = props;
+
+    return this.axiosWrapper<T>({
+      method: "GET",
+      url,
+    });
   }
 }
