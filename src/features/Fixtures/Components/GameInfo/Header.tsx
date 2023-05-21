@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../../../core/components/Navbar";
+import Navbar from "./Navbar";
 import { getFixtureAPI } from "../../api";
 import { dateConverter } from "../../utils/DateConverter";
 
@@ -21,7 +21,7 @@ const Header = () => {
 
   const callApi = getFixtureAPI({ id: "02be22ec-09a8-4b78-a1bf-f82885065591" });
   useEffect(() => {
-    callApi.then((res) => {
+    callApi.then((res: any) => {
       if (res.status === 200) {
         setFixture(res.data);
         setDateTimeString(res.data.start_time);

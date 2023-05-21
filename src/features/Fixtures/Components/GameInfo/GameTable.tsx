@@ -22,15 +22,12 @@ const GameTable = () => {
 
   const callApi = getFixtureAPI({ id: "02be22ec-09a8-4b78-a1bf-f82885065591" });
   useEffect(() => {
-    callApi.then((res) => {
-      console.log(res.data);
+    callApi.then((res: any) => {
       if (res.status === 200) {
         setFixture(res.data);
       }
     });
   }, []);
-
-  console.log("---->fixture", fixture);
 
   return (
     <div className="bg-white rounded text-center p-2 my-4 flex flex-col">
@@ -61,7 +58,7 @@ const GameTable = () => {
                       />
                     </svg>
                   </span>
-                  <h3 className="font-bold">{fixture?.start_time}</h3>
+                  <h3 className="font-bold mt-1">{fixture?.start_time}</h3>
                 </div>
               </TableCell>
             </TableRow>
@@ -87,7 +84,7 @@ const GameTable = () => {
                       />
                     </svg>
                   </span>
-                  <h3 className="font-bold">{fixture?.venue.name}</h3>
+                  <h3 className="font-bold mt-1">{fixture?.venue.name}</h3>
                 </div>
               </TableCell>
             </TableRow>
@@ -113,7 +110,7 @@ const GameTable = () => {
                       />
                     </svg>
                   </span>
-                  <h3 className="font-bold">{fixture?.round.name}</h3>
+                  <h3 className="font-bold mt-1">{fixture?.round.name}</h3>
                 </div>
               </TableCell>
             </TableRow>
@@ -139,7 +136,7 @@ const GameTable = () => {
                       />
                     </svg>
                   </span>
-                  <h3 className="font-bold">{fixture?.referee}</h3>
+                  <h3 className="font-bold mt-1">{fixture?.referee}</h3>
                 </div>
               </TableCell>
             </TableRow>
